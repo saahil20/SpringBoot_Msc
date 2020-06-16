@@ -1,11 +1,13 @@
 package com.exercise.demo.dao;
 
 import com.exercise.demo.model.Tutorial;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+@Repository("fakeDao")
 public class FakeTutorialDataAccessService implements TutorialDao {
 
     private static List<Tutorial> DB = new ArrayList<>();
