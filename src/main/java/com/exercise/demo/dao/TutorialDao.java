@@ -6,12 +6,12 @@ import java.util.List;
 import java.util.UUID;
 
 public interface TutorialDao {
-    int insertTutorial(UUID id, Tutorial tutorial);
+    int insertTutorial(Tutorial tutorial);
 
-    default int insertTutorial(Tutorial tutorial){
-        UUID id= UUID.randomUUID();
-        return insertTutorial(id,tutorial);
-    }
+//    default int insertTutorial(Tutorial tutorial){
+//        UUID id= UUID.randomUUID();
+//        return insertTutorial(id,tutorial);
+//    }
 
     List<Tutorial> selectAllTutorial();
 }

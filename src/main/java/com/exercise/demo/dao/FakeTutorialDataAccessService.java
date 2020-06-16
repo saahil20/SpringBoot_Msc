@@ -13,8 +13,8 @@ public class FakeTutorialDataAccessService implements TutorialDao {
     private static List<Tutorial> DB = new ArrayList<>();
 
     @Override
-    public int insertTutorial(UUID id, Tutorial tutorial) {
-        DB.add(new Tutorial(id,tutorial.getTitle(),tutorial.getDescription(),tutorial.getStatus()));
+    public int insertTutorial(Tutorial tutorial) {
+        DB.add(new Tutorial(tutorial.getId(),tutorial.getTitle(),tutorial.getDescription(),tutorial.getStatus()));
         return 1;
     }
 

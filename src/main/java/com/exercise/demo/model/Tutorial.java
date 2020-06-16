@@ -5,12 +5,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.UUID;
 
 public class Tutorial {
-    private final UUID id;
+    private final int id;
     private final String title;
     private final String description;
     private final String status;
 
-    public Tutorial(@JsonProperty("id") UUID id,@JsonProperty("title") String title,
+    public Tutorial(@JsonProperty("id") int id,@JsonProperty("title") String title,
                     @JsonProperty("description") String description,@JsonProperty("status") String status) {
         this.id = id;
         this.title = title;
@@ -18,7 +18,7 @@ public class Tutorial {
         this.status = status;
     }
 
-    public UUID getId() {
+    public int getId() {
         return id;
     }
 
