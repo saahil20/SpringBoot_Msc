@@ -17,4 +17,9 @@ public class FakeTutorialDataAccessService implements TutorialDao {
         DB.add(new Tutorial(id,tutorial.getTitle(),tutorial.getDescription(),tutorial.getStatus()));
         return 1;
     }
+
+    @Override
+    public List<Tutorial> selectAllTutorial() {
+        return DB;
+    }
 }
