@@ -11,7 +11,7 @@ public class TutorialService {
         this.tutorialDao = tutorialDao;
     }
 
-    public int insertTutorial(Tutorial tutorial){
+    public int addTutorial(Tutorial tutorial){
         return tutorialDao.insertTutorial(tutorial);
     }
 
