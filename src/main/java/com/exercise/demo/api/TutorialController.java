@@ -27,4 +27,9 @@ public class TutorialController {
     public List<Tutorial> getAllTutorial(){
         return tutorialService.getAllTutorial();
     }
+
+    @GetMapping(path = "{id}")
+    public Tutorial getTutorialById(@PathVariable("id") int id){
+        return tutorialService.selectTutorialById(id).orElse(null);
+    }
 }

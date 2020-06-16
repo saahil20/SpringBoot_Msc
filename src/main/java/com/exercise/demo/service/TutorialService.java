@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TutorialService {
@@ -24,6 +25,10 @@ public class TutorialService {
 
     public List<Tutorial> getAllTutorial(){
         return tutorialDao.selectAllTutorial();
+    }
+
+    public Optional<Tutorial> selectTutorialById(int id){
+        return tutorialDao.selectTutorialById(id);
     }
 
 }

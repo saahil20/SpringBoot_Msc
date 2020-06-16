@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Repository("fakeDao")
@@ -21,5 +22,20 @@ public class FakeTutorialDataAccessService implements TutorialDao {
     @Override
     public List<Tutorial> selectAllTutorial() {
         return DB;
+    }
+
+    @Override
+    public Optional<Tutorial> selectTutorialById(int id) {
+        return DB.stream().filter(tutorial -> tutorial.getId()==id).findFirst();
+    }
+
+    @Override
+    public int UpdateTutorialById(int id, Tutorial tutorial) {
+        return 0;
+    }
+
+    @Override
+    public int DeleteTutorialById(int id) {
+        return 0;
     }
 }
