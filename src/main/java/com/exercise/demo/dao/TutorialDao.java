@@ -17,4 +17,6 @@ public interface TutorialDao {
     int updateTutorialById(int id, Tutorial tutorial);
 
     int deleteTutorialById(int id);
+
+    int deleteAllTutorial();
 }

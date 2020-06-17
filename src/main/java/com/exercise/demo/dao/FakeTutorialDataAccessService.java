@@ -10,6 +10,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Repository("fakeDao")
+
 public class FakeTutorialDataAccessService implements TutorialDao {
 
     private static List<Tutorial> DB = new ArrayList<>();
@@ -50,5 +51,11 @@ public class FakeTutorialDataAccessService implements TutorialDao {
             return 1;
         }
         return 0;
+    }
+
+    @Override
+    public int deleteAllTutorial() {
+        DB.clear();
+        return 1;
     }
 }

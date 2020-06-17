@@ -39,4 +39,8 @@ public class TutorialService {
         return tutorialDao.updateTutorialById(id,tutorial);
     }
 
+    public int deleteAllTutorial(){
+        return tutorialDao.deleteAllTutorial();
+    }
+
 }

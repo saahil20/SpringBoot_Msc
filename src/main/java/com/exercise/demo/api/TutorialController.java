@@ -38,6 +38,11 @@ public class TutorialController {
         tutorialService.deleteTutorialById(id);
     }
 
+    @DeleteMapping
+    public void deleteAllTutorial(){
+        tutorialService.deleteAllTutorial();
+    }
+
     @PutMapping(path = "{id}")
     public void updateTutorialById(@PathVariable("id") int id,@RequestBody Tutorial tutorial){
         tutorialService.updateTutorialById(id,tutorial);

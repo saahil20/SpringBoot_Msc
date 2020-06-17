@@ -1,10 +1,12 @@
 package com.exercise.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.sun.istack.internal.NotNull;
 
 import java.util.UUID;
 
 public class Tutorial {
+
     private final int id;
     private final String title;
     private final String description;
