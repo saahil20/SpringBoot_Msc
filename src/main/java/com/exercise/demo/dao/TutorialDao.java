@@ -14,7 +14,7 @@ public interface TutorialDao {
 
     Optional<Tutorial> selectTutorialById(int id);
 
-    int UpdateTutorialById(int id, Tutorial tutorial);
+    int updateTutorialById(int id, Tutorial tutorial);
 
-    int DeleteTutorialById(int id);
+    int deleteTutorialById(int id);
 }

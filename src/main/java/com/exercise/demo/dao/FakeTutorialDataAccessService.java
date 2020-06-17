@@ -3,6 +3,7 @@ package com.exercise.demo.dao;
 import com.exercise.demo.model.Tutorial;
 import org.springframework.stereotype.Repository;
 
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -30,12 +31,24 @@ public class FakeTutorialDataAccessService implements TutorialDao {
     }
 
     @Override
-    public int UpdateTutorialById(int id, Tutorial tutorial) {
-        return 0;
+    public int updateTutorialById(int id, Tutorial updateTutorial) {
+        return selectTutorialById(id).map(tutorial -> {
+            int idxOfTutorialToUpdate = DB.indexOf(tutorial);
+            if(idxOfTutorialToUpdate >=0){
+                DB.set(idxOfTutorialToUpdate,new Tutorial(updateTutorial.getId(),updateTutorial.getTitle(),updateTutorial.getDescription(),updateTutorial.getStatus()));
+                return 1;
+            }
+            return 0;
+        }).orElse(0);
     }
 
     @Override
-    public int DeleteTutorialById(int id) {
+    public int deleteTutorialById(int id) {
+        Optional<Tutorial> tutorialMaybe = selectTutorialById(id);
+        if(tutorialMaybe.isPresent()){
+            DB.remove(tutorialMaybe.get());
+            return 1;
+        }
         return 0;
     }
 }

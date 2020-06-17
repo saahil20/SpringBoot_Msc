@@ -32,4 +32,14 @@ public class TutorialController {
     public Tutorial getTutorialById(@PathVariable("id") int id){
         return tutorialService.selectTutorialById(id).orElse(null);
     }
+
+    @DeleteMapping(path = "{id}")
+    public void deleteTutorialById(@PathVariable("id") int id){
+        tutorialService.deleteTutorialById(id);
+    }
+
+    @PutMapping(path = "{id}")
+    public void updateTutorialById(@PathVariable("id") int id,@RequestBody Tutorial tutorial){
+        tutorialService.updateTutorialById(id,tutorial);
+    }
 }
