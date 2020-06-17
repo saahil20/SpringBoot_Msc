@@ -35,6 +35,10 @@ public class TutorialService {
         return tutorialDao.selectPublishedTutorial();
     }
 
+    public List<Tutorial> selectByTitleContaining(String keyword){
+        return tutorialDao.selectByTitleContaining(keyword);
+    }
+
     public int deleteTutorialById(int id){
         return tutorialDao.deleteTutorialById(id);
     }

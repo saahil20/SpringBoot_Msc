@@ -33,6 +33,12 @@ public class TutorialController {
         return tutorialService.selectTutorialById(id).orElse(null);
     }
 
+
+    @GetMapping(path ="/search")
+    public List<Tutorial> getByTitleContaining(@RequestParam(name = "title") String keyword){
+        return tutorialService.selectByTitleContaining(keyword);
+    }
+
     @GetMapping(path = "/published")
     public List<Tutorial> getPublishedTutorial(){
         return tutorialService.selectPublishedTutorial();

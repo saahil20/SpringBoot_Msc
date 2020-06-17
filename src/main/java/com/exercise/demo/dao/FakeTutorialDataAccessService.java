@@ -63,4 +63,9 @@ public class FakeTutorialDataAccessService implements TutorialDao {
         DB.clear();
         return 1;
     }
+
+    @Override
+    public List<Tutorial> selectByTitleContaining(String keyword) {
+        return DB.stream().filter(tutorial -> tutorial.getTitle().contains(keyword)).collect(Collectors.toList());
+    }
 }

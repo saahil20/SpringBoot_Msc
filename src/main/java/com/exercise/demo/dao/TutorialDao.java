@@ -21,5 +21,7 @@ public interface TutorialDao {
 
     int deleteAllTutorial();
 
+    List<Tutorial> selectByTitleContaining(String keyword);
+
 
 }
