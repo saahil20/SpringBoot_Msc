@@ -33,6 +33,11 @@ public class TutorialController {
         return tutorialService.selectTutorialById(id).orElse(null);
     }
 
+    @GetMapping(path = "/published")
+    public List<Tutorial> getPublishedTutorial(){
+        return tutorialService.selectPublishedTutorial();
+    }
+
     @DeleteMapping(path = "{id}")
     public void deleteTutorialById(@PathVariable("id") int id){
         tutorialService.deleteTutorialById(id);

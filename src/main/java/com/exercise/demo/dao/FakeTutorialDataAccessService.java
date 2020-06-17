@@ -3,11 +3,10 @@ package com.exercise.demo.dao;
 import com.exercise.demo.model.Tutorial;
 import org.springframework.stereotype.Repository;
 
-import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Repository("fakeDao")
 
@@ -29,6 +28,12 @@ public class FakeTutorialDataAccessService implements TutorialDao {
     @Override
     public Optional<Tutorial> selectTutorialById(int id) {
         return DB.stream().filter(tutorial -> tutorial.getId()==id).findFirst();
+    }
+
+    @Override
+    public List<Tutorial> selectPublishedTutorial() {
+        //return DB.stream().filter(tutorial -> tutorial.getStatus().equals("published")).findFirst();
+        return DB.stream().filter(tutorial -> tutorial.getStatus().equals("published")).collect(Collectors.toList());
     }
 
     @Override

@@ -4,7 +4,6 @@ import com.exercise.demo.model.Tutorial;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 public interface TutorialDao {
     int insertTutorial(Tutorial tutorial);
@@ -14,9 +13,13 @@ public interface TutorialDao {
 
     Optional<Tutorial> selectTutorialById(int id);
 
+    List<Tutorial> selectPublishedTutorial();
+
     int updateTutorialById(int id, Tutorial tutorial);
 
     int deleteTutorialById(int id);
 
     int deleteAllTutorial();
+
+
 }

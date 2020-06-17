@@ -31,6 +31,10 @@ public class TutorialService {
         return tutorialDao.selectTutorialById(id);
     }
 
+    public List<Tutorial> selectPublishedTutorial(){
+        return tutorialDao.selectPublishedTutorial();
+    }
+
     public int deleteTutorialById(int id){
         return tutorialDao.deleteTutorialById(id);
     }
